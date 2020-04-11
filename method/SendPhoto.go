@@ -27,7 +27,7 @@ func SendPhoto(api string, update entity.Update) error {
 
 	photo, _ := writer.CreateFormFile("photo", "qr.png")
 
-	png, err := qrcode.Encode(update.Message.Text, qrcode.Highest, 256)
+	png, err := qrcode.Encode(update.Message.Text, qrcode.Highest, 512)
 	if err != nil {
 		return err
 	}
